@@ -6,6 +6,6 @@ fun main(args: Array<String>) {
     val noOfDozens=APPLES/DOZENS
     val remainApples=APPLES%DOZENS
 
-    println(noOfDozens) //4
+    println("the no of dozen" +noOfDozens) //4
     println(remainApples) //2
 }
