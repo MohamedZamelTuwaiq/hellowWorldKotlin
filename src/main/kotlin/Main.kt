@@ -1,41 +1,36 @@
-
-
-
-    studentGrade = 100
-
-   var isPass = when (studentGrade) {
-       100 -> {
-           println("amazing $studentGrade $studentGrade jkenioe")
-           true
-       }
-        in 90..95 -> {
-            println("exc")
-            true
-        }
-        in 80..90 -> {
-            println("Very Good")
-            true
-        }
-        in 70..79 -> {
-            println("good")
-            true
-        }
-        in 50..69 -> {
-
-            println("ok")
-            true
-        }
-        else -> {
-            println("failed")
-            false
-        }
+fun main() {
+//sort 3 unique numbers using if
+    var n1 = 4.0
+    var n2 = 1.0
+    var n3 = 0.5
+    var smallest = n1
+    if (smallest >= n2) {
+        smallest = n2
     }
-    //println(isPass)
+    if (smallest >= n3) {
+        smallest = n3
+    }
+
+    var biggest = n1
+    if (biggest <= n2) {
+        biggest = n2
+    }
+    if (biggest <= n3) {
+        biggest = n3
+    }
 
 
-    var firstNum =9
-    var secondNum=10
+    var mid = 0.0
+    if ((n1 < n2 && n1 > n3) || (n1 > n2 && n1 < n3)) {
+        mid = n1
+    }
+    if ((n2 < n1 && n2 > n3) || (n2 > n1 && n2 < n3)) {
+        mid = n2
+    }
+    if ((n3 < n1 && n3 > n2) || (n3 > n1 && n3 < n2)) {
+        mid = n3
+    }
 
-    println("$firstNum $secondNum")
 
+    println("$smallest $mid $biggest")
 }
