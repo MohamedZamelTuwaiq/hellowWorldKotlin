@@ -30,7 +30,7 @@ fun getMid(n1:Double,n2:Double,n3:Double):Double{
     if ((n3 < n1 && n3 > n2) || (n3 > n1 && n3 < n2)) {
         mid = n3
     }
-
+println("Mid is comming from mid")
     return mid
 }
 fun getEasyMid(n1:Double,n2:Double,n3:Double):Double{
@@ -45,5 +45,6 @@ fun getEasyMid(n1:Double,n2:Double,n3:Double):Double{
     } else {
         mid = n3
     }
+    println("Mid is comming from easy mid")
     return mid
 }
