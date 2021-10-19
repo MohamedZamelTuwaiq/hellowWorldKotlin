@@ -1,31 +1,13 @@
-import java.io.File
-
 fun main() {
+    var myMap = mutableMapOf("inst" to "zamel", "inst2" to "Sadun", "friend" to "zamel")
+    myMap["class"] = "kotlin"
+    myMap.putIfAbsent("class", "kkkk")
 
-    var s = File("datat/inputs.txt").readLines().toMutableList()
-    var toDoSet = listOf("drinking", "coffee", "work", "fos7a", "work", "work").toMutableSet()
+    println(myMap)
 
-    toDoSet += "work"
-    // println(toDoSet)
-    toDoSet.add("zamel")
-    toDoSet.addAll(setOf("ss", "ssdd"))
-    //  println(toDoSet)
-    toDoSet.elementAt(2)
-    //  println(toDoSet.elementAt(2))
-    var todoSetIterator = toDoSet.iterator()
-    println(toDoSet)
-    var isNotZamel = true
-    while (todoSetIterator.hasNext() && isNotZamel) {
-        var nextValue = todoSetIterator.next()
-        if (nextValue == "zamel") {
-            isNotZamel = false
-        }
-        println("${nextValue}  next  ${todoSetIterator.hasNext()}")
-    }
+    myMap.remove("class")
+    myMap.putAll(listOf("sss","dd","dddf").mapIndexed { index,item -> index.toString() to item })
+    myMap.putAll(mapOf("10" to "sss","d" to "dd","44" to "dsfdsfdf"))
 
-
-    var newList=listOf("drinking", "coffee", "work", "fos7a", "work", "work").distinct()
-    println(newList)
-
-
+    println(myMap)
 }
