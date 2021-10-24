@@ -1,20 +1,45 @@
+import classes.Animal
+import classes.Cat
+import classes.Dog
+
 fun main(){
-    welcomeStudent("Zamel")
-//val result=isPassed(40)
-//    println(result)
+    var animal:Animal = Animal(false)
+    var cat= Cat(true)
+    var dog=Dog()
+    //print whatever the animal is danger or not from the isWildFun outside the classes
+    println("the animal is wild = ${isWild(animal)}")
+    println("the cat is Wild= ${isWild(cat)}")
+    println("the dog is Wild= ${isWild(dog)}")
+
+    // this fun calls the super sound() then its one
+    //cat.sound()
+
+    var cat1:Animal=Cat(false)
+    var dog1:Animal=Dog()
+    var listOfAnimals= mutableListOf<Animal>()
+    listOfAnimals.add(dog1)
+    listOfAnimals.add(cat)
+    listOfAnimals.add(dog)
+    listOfAnimals.add(cat1)
+   // couldn't call catName from Animal Ref  as it :- println(cat1.catName)
+   if (isCat(cat1)) {
+       var catShap = cat1 as Cat
+   }
+
+    println(cat.toString())
+
 
 }
-
-//non return single expression
-fun welcomeStudent(studentName:String)= println("Welcome $studentName to our course")
-// return value
-fun getPI():Double{
-    return 3.14
+fun isCat(animal: Animal):Boolean{
+    if (animal is Cat){
+        return true
+    }else {
+        return false
+    }
 }
-// return value with single exp
-fun getPISingleWay():Double=3.14
 
-fun isPassed(studentGrade:Int)= studentGrade>=50
+fun isWild(animal:Animal):Boolean{
 
+    return animal.isDanger
 
-
+}
