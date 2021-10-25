@@ -1,45 +1,20 @@
-import classes.Animal
-import classes.Cat
-import classes.Dog
+fun main() {
 
-fun main(){
-    var animal:Animal = Animal(false)
-    var cat= Cat(true)
-    var dog=Dog()
-    //print whatever the animal is danger or not from the isWildFun outside the classes
-    println("the animal is wild = ${isWild(animal)}")
-    println("the cat is Wild= ${isWild(cat)}")
-    println("the dog is Wild= ${isWild(dog)}")
+    var emp = Employee("zamel", "22")
+    var emp3 = Employee("zamel", "22")
+    var emp2 = Employee("not Zamel", "ddf334")
+    emp.f()
+    println(emp.hashCode().toString() + "-----" + emp3.hashCode().toString())
 
-    // this fun calls the super sound() then its one
-    //cat.sound()
-
-    var cat1:Animal=Cat(false)
-    var dog1:Animal=Dog()
-    var listOfAnimals= mutableListOf<Animal>()
-    listOfAnimals.add(dog1)
-    listOfAnimals.add(cat)
-    listOfAnimals.add(dog)
-    listOfAnimals.add(cat1)
-   // couldn't call catName from Animal Ref  as it :- println(cat1.catName)
-   if (isCat(cat1)) {
-       var catShap = cat1 as Cat
-   }
-
-    println(cat.toString())
+    var empCopy = emp.copy()
 
 
+    var (name, id) = emp
+    println("name is ${emp.component2()} and id is $id")
 }
-fun isCat(animal: Animal):Boolean{
-    if (animal is Cat){
-        return true
-    }else {
-        return false
+
+data class Employee(var name: String, var id: String) {
+    fun f() {
+        println("LLLK")
     }
-}
-
-fun isWild(animal:Animal):Boolean{
-
-    return animal.isDanger
-
 }
